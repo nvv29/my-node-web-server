@@ -26,6 +26,16 @@ app.use((req,res,next)=>{
 next();
 })
 
+
+/*
+create new projects page
+register new url render .hbs
+/projects route
+viewfile like home about portfolio page here
+inside partials add new link for the projects page
+push to heroku
+test in local browser
+*/
 // app.use((req,res,next)=>{
 //   res.render('maintenance.hbs',{
 //     pageTitle: 'Maint Page',
@@ -66,6 +76,13 @@ res.render('about.hbs',{
 
 })
 
+
+app.get('/projects',(req,res)=>{
+  res.render('projects.hbs',{
+    pageTitle: 'Projects page is here',
+    currentYear: new Date().getFullYear()
+  })
+})
 
 app.get('/bad',(req,res)=>{
   res.send({
